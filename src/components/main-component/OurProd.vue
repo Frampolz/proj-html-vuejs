@@ -11,9 +11,15 @@
       </div>
     </div>
     <div class="our-prod-box">
+      <div class="left-arrow">
+        <i class="fas fa-chevron-left"></i>
+      </div>
       <img src="../../assets/img/choco-chip-cookies.jpg" alt="" />
     </div>
     <div class="our-prod-box">
+      <div class="right-arrow">
+        <i class="fas fa-chevron-right"></i>
+      </div>
       <img src="../../assets/img/strawberry-jam-cookies.jpg" alt="" />
     </div>
   </div>
@@ -31,15 +37,37 @@ export default {
   gap: 1em;
   .our-prod-box {
     flex-basis: calc(100% / 3);
+    position: relative;
+    .left-arrow,
+    .right-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 2em 1em;
+      background-color: $purple;
+      color: white;
+      opacity: 0.5;
 
+      &:hover {
+        opacity: 1;
+        cursor: pointer;
+      }
+    }
+
+    .left-arrow {
+      left: 0;
+    }
+    .right-arrow {
+      right: 0;
+    }
     img {
       width: 100%;
     }
   }
   .inner-our-prod-box {
-      h2 {
-          padding-right: 3em;
-      }
+    h2 {
+      padding-right: 3em;
+    }
     .button {
       display: inline-block;
       margin-top: 2em;
@@ -49,6 +77,7 @@ export default {
         background-color: $purple;
         font-size: 1.1em;
         color: white;
+        text-transform: capitalize;
       }
     }
   }
