@@ -24,7 +24,9 @@
           varius. Aliquam erat volutpat. Nullam quis sagittis nibh ac nulla id
           orci tempor.
         </p>
-        <div class="button"><a href="">explore our products</a></div>
+        <div class="button">
+          <a class="btn white" href="">explore our products</a>
+        </div>
       </div>
     </div>
   </header>
@@ -113,17 +115,6 @@ export default {
         font-size: 1.2em;
         line-height: 1.5em;
         color: $lightGrey;
-      }
-      .button {
-        display: inline-block;
-        margin-top: 2em;
-        a {
-          padding: 0.7em 1.7em;
-          border-radius: 5px;
-          background-color: white;
-          font-size: 1.1em;
-          color: $purple;
-        }
       }
     }
   }

@@ -7,7 +7,9 @@
           All our delectable pastries are backed fresh in our Kitchen very
           morning, and are made with all- natural, all organic ingredients.
         </h2>
-        <div class="button"><a href="">start shopping</a></div>
+        <div class="button">
+          <a class="purple btn" href="">start shopping</a>
+        </div>
       </div>
     </div>
     <div class="our-prod-box">
@@ -38,28 +40,7 @@ export default {
   .our-prod-box {
     flex-basis: calc(100% / 3);
     position: relative;
-    .left-arrow,
-    .right-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      padding: 2em 1em;
-      background-color: $purple;
-      color: white;
-      opacity: 0.5;
 
-      &:hover {
-        opacity: 1;
-        cursor: pointer;
-      }
-    }
-
-    .left-arrow {
-      left: 0;
-    }
-    .right-arrow {
-      right: 0;
-    }
     img {
       width: 100%;
     }
@@ -67,18 +48,6 @@ export default {
   .inner-our-prod-box {
     h2 {
       padding-right: 3em;
-    }
-    .button {
-      display: inline-block;
-      margin-top: 2em;
-      a {
-        padding: 0.7em 1.7em;
-        border-radius: 5px;
-        background-color: $purple;
-        font-size: 1.1em;
-        color: white;
-        text-transform: capitalize;
-      }
     }
   }
 }

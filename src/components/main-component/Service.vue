@@ -32,7 +32,7 @@ export default {
     }
   }
   .service-box-container {
-      gap: 8em;
+    gap: 8em;
     .service-box {
       flex-basis: calc(100% / 2);
       img {

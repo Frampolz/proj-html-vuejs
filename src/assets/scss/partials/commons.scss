@@ -34,9 +34,60 @@ h2 {
   color: $purple;
 }
 
+h3 {
+  color: $purple;
+  font-size: 1.5em;
+  text-transform: capitalize;
+}
+
 h5 {
   font-size: 0.8em;
   font-weight: normal;
   text-transform: uppercase;
   color: $lightGrey;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 2em;
+  .btn {
+    display: inline-block;
+    padding: 0.7em 1.7em;
+    border-radius: 5px;
+    background-color: $purple;
+    font-size: 1.1em;
+    color: white;
+    text-transform: capitalize;
+  }
+  .purple {
+    background-color: $purple;
+    color: white;
+  }
+  .white {
+    color: $purple;
+    background-color: white;
+  }
+}
+
+.left-arrow,
+.right-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 2em 1em;
+  background-color: $purple;
+  color: white;
+  opacity: 0.5;
+
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+}
+
+.left-arrow {
+  left: 0;
+}
+.right-arrow {
+  right: 0;
 }
