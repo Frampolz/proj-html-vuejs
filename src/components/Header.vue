@@ -6,6 +6,15 @@
       </div>
       <HeaderMenu />
     </div>
+    <div class="header-mid d-flex">
+      <div class="header-mid-box d-flex">
+        <i class="fas fa-archive"><p>demos</p></i>
+      </div>
+      <div class="header-mid-box d-flex prize">
+        <p><span>$</span> 39</p>
+        <h3>on sale</h3>
+      </div>
+    </div>
     <div class="header-bot d-flex">
       <div class="inner-header-bot">
         <h2>fresh &amp; tasty bakery evert day</h2>
@@ -45,10 +54,52 @@ export default {
     justify-content: space-between;
     padding: 1em;
   }
+  .header-mid {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 0 1em;
+    .header-mid-box {
+      width: 70px;
+      height: 70px;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border-radius: 8px;
+      background-color: white;
+      &:first-of-type {
+        margin-bottom: 0.5em;
+      }
+      .fa-archive {
+        font-size: 1.5em;
+        p {
+          font-size: 0.6em;
+          font-weight: normal;
+          text-transform: capitalize;
+        }
+      }
+    }
+    .prize {
+      flex-direction: column;
+      p {
+        color: $green;
+        font-size: 1.5em;
+        font-weight: bold;
+        span {
+          vertical-align: super;
+        }
+      }
+      h3 {
+        font-size: 0.9em;
+        font-weight: normal;
+        text-transform: capitalize;
+      }
+    }
+  }
   .header-bot {
     height: 80%;
     width: 90%;
-    align-items: center;
+
     .inner-header-bot {
       width: 30%;
       h1 {
