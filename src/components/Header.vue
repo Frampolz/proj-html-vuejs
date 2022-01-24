@@ -17,7 +17,7 @@
     </div>
     <div class="header-bot d-flex">
       <div class="inner-header-bot">
-        <h2>fresh &amp; tasty bakery evert day</h2>
+        <h5>fresh &amp; tasty bakery evert day</h5>
         <h1>the perfect fresh bread</h1>
         <p>
           Cras consequat lectus vestibulum tortor pulvinar, quis euismod nisl
@@ -108,12 +108,7 @@ export default {
         text-transform: capitalize;
         color: $purple;
       }
-      h2 {
-        font-size: 0.8em;
-        font-weight: normal;
-        text-transform: uppercase;
-        color: $lightGrey;
-      }
+
       p {
         font-size: 1.2em;
         line-height: 1.5em;
