@@ -5,6 +5,7 @@
     <AllProd />
     <Delivery />
     <Locations />
+    <StayInTouch />
   </main>
 </template>
 
@@ -14,6 +15,7 @@ import Service from "./main-component/Service.vue";
 import AllProd from "./main-component/AllProd.vue";
 import Delivery from "./main-component/Delivery.vue";
 import Locations from "./main-component/Locations.vue";
+import StayInTouch from "./main-component/StayInTouch.vue";
 export default {
   name: "Main",
   components: {
@@ -21,7 +23,8 @@ export default {
     Service,
     AllProd,
     Delivery,
-    Locations
+    Locations,
+    StayInTouch,
   },
 };
 </script>
