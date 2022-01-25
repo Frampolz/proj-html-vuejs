@@ -4,6 +4,7 @@
     <Service />
     <AllProd />
     <Delivery />
+    <Locations />
   </main>
 </template>
 
@@ -12,13 +13,15 @@ import OurProd from "./main-component/OurProd.vue";
 import Service from "./main-component/Service.vue";
 import AllProd from "./main-component/AllProd.vue";
 import Delivery from "./main-component/Delivery.vue";
+import Locations from "./main-component/Locations.vue";
 export default {
   name: "Main",
   components: {
     OurProd,
     Service,
     AllProd,
-    Delivery
+    Delivery,
+    Locations
   },
 };
 </script>
