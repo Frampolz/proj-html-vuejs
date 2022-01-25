@@ -58,14 +58,23 @@ h5 {
     font-size: 1.1em;
     color: white;
     text-transform: capitalize;
+    transition: all 0.2s;
   }
   .purple {
     background-color: $purple;
     color: white;
+    &:hover {
+      color: $purple;
+      background-color: $lightPurple;
+    }
   }
   .white {
     color: $purple;
     background-color: white;
+    &:hover {
+      background-color: $purple;
+      color: white;
+    }
   }
 }
 
@@ -87,9 +96,11 @@ h5 {
 
 .left-arrow {
   left: 0;
+  z-index: 5;
 }
 .right-arrow {
   right: 0;
+  z-index: 5;
 }
 
 .m-0 {

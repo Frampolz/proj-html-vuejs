@@ -13,6 +13,9 @@
       </div>
       <div class="all-product-box d-flex">
         <img src="../../assets/img/choco-chip-cookies-400x510.jpg" alt="" />
+        <div class="filter">
+          <h5>select options / quick view</h5>
+        </div>
         <h3>choco chip cookies</h3>
         <p>$19.00- $39.00</p>
         <div class="left-arrow">
@@ -66,6 +69,25 @@ export default {
       text-align: center;
       flex-direction: column;
       justify-content: center;
+      .filter {
+        display: none;
+        width: 100%;
+        height: 80%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+      }
+      &:hover .filter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.5);
+        h5 {
+          cursor: pointer;
+          color: white;
+        }
+      }
       h3 {
         margin: 1em;
       }
