@@ -23,6 +23,7 @@ export default {
   background-image: url("../../assets/img/call-to-action-bg.jpg");
   background-size: 130em;
   background-position: top right;
+  background-repeat: no-repeat;
   justify-content: center;
   .inner-shop {
     width: 60%;
