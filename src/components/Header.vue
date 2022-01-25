@@ -2,7 +2,7 @@
   <header class="header d-flex">
     <div class="header-top d-flex">
       <div class="logo">
-        <img src="../assets/img/avada-bakery-logo.png" alt="" />
+        <a href=""><img src="../assets/img/avada-bakery-logo.png" alt="" /></a>
       </div>
       <HeaderMenu />
     </div>
