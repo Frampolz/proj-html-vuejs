@@ -5,49 +5,6 @@
       <h2>visit our bakeries</h2>
     </div>
     <div class="locations-box-container d-flex">
-      <!--       <div class="location-box-left">
-        <img src="../../assets/img/new-york-bk.jpg" alt="" />
-        <div class="location">
-          <h2>new york</h2>
-          <div class="location-details d-flex">
-            <div class="phone">
-              <h5>call us</h5>
-              <p>1.800.458.556</p>
-            </div>
-            <div class="business-hour">
-              <h5>open all week</h5>
-              <p>9:00 AM - 6:00 PM</p>
-            </div>
-            <div class="maps">
-              <div class="button m-0">
-                <a class="btn white" href="">view map</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="location-box-right">
-        <img src="../../assets/img/london-bk.jpg" alt="" />
-        <div class="location">
-          <h2>london</h2>
-          <div class="location-details d-flex">
-            <div class="phone">
-              <h5>call us</h5>
-              <p>1.800.458.556</p>
-            </div>
-            <div class="business-hour">
-              <h5>open all week</h5>
-              <p>9:00 AM - 6:00 PM</p>
-            </div>
-            <div class="maps">
-              <div class="button m-0">
-                <a class="btn white" href="">view map</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> -->
-
       <div
         v-for="(location, index) in locations"
         :key="index"
