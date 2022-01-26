@@ -12,40 +12,6 @@
         </div>
       </div>
     </div>
-    <!--     <div class="our-prod-box">
-      <div @click="prev()" class="left-arrow">
-        <i class="fas fa-chevron-left"></i>
-      </div>
-      <img
-        :src="require(`../../assets/img/${productArray[counter].image}.jpg`)"
-        alt=""
-      />
-      <div class="filter">
-        <div class="prod-details">
-          <h3>{{ productArray[counter].item }}</h3>
-          <h6>{{ productArray[counter].category }}</h6>
-          <h3>{{ productArray[counter].prize }}</h3>
-        </div>
-      </div>
-    </div>
-
-    <div class="our-prod-box">
-      <div @click="next()" class="right-arrow">
-        <i class="fas fa-chevron-right"></i>
-      </div>
-      <img
-        :src="require(`../../assets/img/${productArray[counter1].image}.jpg`)"
-        alt=""
-      />
-      <div class="filter">
-        <div class="prod-details">
-          <h3>{{ productArray[counter1].item }}</h3>
-          <h6>{{ productArray[counter1].category }}</h6>
-          <h3>{{ productArray[counter1].prize }}</h3>
-        </div>
-      </div>
-    </div> -->
-
     <div v-for="(counter, index) in counters" :key="index" class="our-prod-box">
       <div @click="prev()" class="left-arrow">
         <i class="fas fa-chevron-left"></i>
