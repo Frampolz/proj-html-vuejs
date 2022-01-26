@@ -1,5 +1,5 @@
 <template>
-  <header class="header d-flex">
+  <header id="top" class="header d-flex">
     <div class="header-top d-flex">
       <div class="logo">
         <a href=""><img src="../assets/img/avada-bakery-logo.png" alt="" /></a>

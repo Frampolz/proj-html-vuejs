@@ -14,6 +14,9 @@
         ><i :class="social.link"></i
       ></a>
     </div>
+    <div class="to-the-top">
+      <a href="#top"><i class="fas fa-chevron-up"></i></a>
+    </div>
   </div>
 </template>
 
@@ -65,6 +68,17 @@ export default {
   .social-link {
     a {
       margin: 1.5em;
+    }
+  }
+  .to-the-top {
+    position: absolute;
+    bottom: -4em;
+    right: 4em;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    .fa-chevron-up {
+      color: white;
+      padding: 1em;
     }
   }
 }

@@ -21,6 +21,7 @@ export default {
 
 <style lang="scss">
 .footer {
+  position: relative;
   margin: 5em 0;
   justify-content: center;
 }
