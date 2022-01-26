@@ -61,6 +61,9 @@ export default {
     flex-direction: column;
     align-items: flex-end;
     padding: 0 1em;
+    position: fixed;
+    top: 10em;
+    right: 0;
     .header-mid-box {
       width: 70px;
       height: 70px;
@@ -69,6 +72,7 @@ export default {
       text-align: center;
       border-radius: 8px;
       background-color: white;
+      box-shadow: 4px 0px 15px lightgray;
       &:first-of-type {
         margin-bottom: 0.5em;
       }
@@ -101,7 +105,7 @@ export default {
   .header-bot {
     height: 80%;
     width: 90%;
-
+    padding: 10em 0;
     .inner-header-bot {
       width: 30%;
       h1 {
