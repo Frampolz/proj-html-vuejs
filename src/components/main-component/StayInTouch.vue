@@ -1,9 +1,6 @@
 <template>
   <div class="stay-in-touch w-90">
     <div class="stay-in-touch-container d-flex">
-      <div class="stay-in-touch-box">
-        <img src="../../assets/img/social-1.jpg" alt="" />
-      </div>
       <div class="stay-in-touch-box d-flex">
         <h5>made for sharing</h5>
         <h2 class="m-05">let's stay in touch</h2>
@@ -13,20 +10,15 @@
           >
         </div>
       </div>
-      <div class="stay-in-touch-box">
-        <img src="../../assets/img/social-2.jpg" alt="" />
-      </div>
-      <div class="stay-in-touch-box">
-        <img src="../../assets/img/social-3.jpg" alt="" />
-      </div>
-      <div class="stay-in-touch-box">
-        <img src="../../assets/img/social-4.jpg" alt="" />
-      </div>
-      <div class="stay-in-touch-box">
-        <img src="../../assets/img/social-5.jpg" alt="" />
-      </div>
-      <div class="stay-in-touch-box">
-        <img src="../../assets/img/social-6.jpg" alt="" />
+      <div
+        v-for="(image, index) in images"
+        :key="index"
+        class="stay-in-touch-box"
+      >
+        <img
+          :src="require(`../../assets/img/social-${image.img}.jpg`)"
+          alt=""
+        />
       </div>
     </div>
   </div>
@@ -35,6 +27,30 @@
 <script>
 export default {
   name: "StayInTouch",
+  data() {
+    return {
+      images: [
+        {
+          img: "1",
+        },
+        {
+          img: "2",
+        },
+        {
+          img: "3",
+        },
+        {
+          img: "4",
+        },
+        {
+          img: "5",
+        },
+        {
+          img: "6",
+        },
+      ],
+    };
+  },
 };
 </script>
 
@@ -51,7 +67,7 @@ export default {
       img {
         width: 100%;
       }
-      &:nth-of-type(2) {
+      &:nth-of-type(1) {
         flex-basis: calc(100% / 2.04);
         flex-direction: column;
         align-items: center;
@@ -60,6 +76,9 @@ export default {
         .fa-instagram {
           margin-right: 0.5em;
         }
+      }
+      &:nth-of-type(2) {
+        order: -1;
       }
     }
   }
