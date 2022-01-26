@@ -12,7 +12,7 @@
         </div>
       </div>
     </div>
-    <div class="our-prod-box">
+    <!--     <div class="our-prod-box">
       <div @click="prev()" class="left-arrow">
         <i class="fas fa-chevron-left"></i>
       </div>
@@ -44,6 +44,28 @@
           <h3>{{ productArray[counter1].prize }}</h3>
         </div>
       </div>
+    </div> -->
+
+    <div v-for="(counter, index) in counters" :key="index" class="our-prod-box">
+      <div @click="prev()" class="left-arrow">
+        <i class="fas fa-chevron-left"></i>
+      </div>
+      <img
+        :src="
+          require(`../../assets/img/${productArray[counter.counter].image}.jpg`)
+        "
+        alt=""
+      />
+      <div class="filter">
+        <div class="prod-details">
+          <h3>{{ productArray[counter.counter].item }}</h3>
+          <h6>{{ productArray[counter.counter].category }}</h6>
+          <h3>{{ productArray[counter.counter].prize }}</h3>
+        </div>
+      </div>
+      <div @click="next()" class="right-arrow">
+        <i class="fas fa-chevron-right"></i>
+      </div>
     </div>
   </div>
 </template>
@@ -53,8 +75,14 @@ export default {
   name: "OurProd",
   data() {
     return {
-      counter: 0,
-      counter1: 1,
+      counters: [
+        {
+          counter: 0,
+        },
+        {
+          counter: 1,
+        },
+      ],
     };
   },
   props: {
@@ -67,28 +95,26 @@ export default {
   },
   methods: {
     prev(index) {
-      this.counter1 == index;
-      this.counter1 -= 1;
-      if (this.counter1 < 0) {
-        this.counter1 = this.productArray.length - 1;
-      }
-      this.counter == index;
-      this.counter -= 1;
-      if (this.counter < 0) {
-        this.counter = this.productArray.length - 1;
-      }
+      this.counters.forEach((element, countIndex) => {
+        countIndex == index;
+        element.counter == countIndex;
+        element.counter--;
+
+        if (element.counter < 0) {
+          element.counter = this.productArray.length - 1;
+        }
+      });
     },
     next(index) {
-      this.counter1 == index;
-      this.counter1++;
-      if (this.counter1 > this.productArray.length - 1) {
-        this.counter1 = 0;
-      }
-      this.counter == index;
-      this.counter++;
-      if (this.counter > this.productArray.length - 1) {
-        this.counter = 0;
-      }
+      this.counters.forEach((element, countIndex) => {
+        countIndex == index;
+        element.counter == countIndex;
+        element.counter++;
+
+        if (element.counter > this.productArray.length - 1) {
+          element.counter = 0;
+        }
+      });
     },
   },
   created() {},
@@ -102,6 +128,16 @@ export default {
   .our-prod-box {
     flex-basis: calc(100% / 3);
     position: relative;
+    &:nth-of-type(2) {
+      .right-arrow {
+        display: none;
+      }
+    }
+    &:nth-of-type(3) {
+      .left-arrow {
+        display: none;
+      }
+    }
     .filter {
       width: 100%;
       height: 100%;
