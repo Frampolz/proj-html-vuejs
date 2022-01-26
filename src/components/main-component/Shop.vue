@@ -2,7 +2,7 @@
   <div class="shop d-flex">
     <div class="inner-shop">
       <h5>try our seasonal products</h5>
-      <h2 class="mt-05">order for pick-up or delivery to your home</h2>
+      <h2 class="mt-05">Order for pick-up or delivery to your home</h2>
       <div class="button">
         <a class="btn white" href="">shop now</a>
       </div>
@@ -31,8 +31,7 @@ export default {
     h2 {
       color: white;
       font-size: 3.5em;
-      padding: 0 6em 0 0;
-      word-spacing: -8px;
+      padding: 0 4em 0 0;
     }
 
     .white {

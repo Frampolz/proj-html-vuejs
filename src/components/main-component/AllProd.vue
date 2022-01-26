@@ -183,6 +183,7 @@ export default {
       }
       h3 {
         margin: 1em;
+        font-size: 1.4em;
       }
       p {
         font-size: 1.2em;
