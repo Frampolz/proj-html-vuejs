@@ -119,7 +119,7 @@ export default {
       .filter {
         display: none;
         width: 100%;
-        height: 80%;
+        height: 82%;
         position: absolute;
         top: 0;
         left: 0;
