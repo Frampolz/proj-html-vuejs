@@ -11,61 +11,27 @@
           <a class="btn purple" href="">shopping all products</a>
         </div>
       </div>
-      <div class="all-product-box d-flex">
+      <div
+        v-for="(counter, index) in counters"
+        :key="index"
+        class="all-product-box d-flex"
+      >
         <img
           :src="
-            require(`../../assets/img/${productArray[counter].image}-400x510.jpg`)
+            require(`../../assets/img/${
+              productArray[counter.counter].image
+            }-400x510.jpg`)
           "
           alt=""
         />
-
         <div class="filter">
           <h5>select options / quick view</h5>
         </div>
-        <h3>{{ productArray[counter].item }}</h3>
-        <p>{{ productArray[counter].prize }}</p>
+        <h3>{{ productArray[counter.counter].item }}</h3>
+        <p>{{ productArray[counter.counter].prize }}</p>
         <div @click="prev()" class="left-arrow">
           <i class="fas fa-chevron-left"></i>
         </div>
-      </div>
-      <div class="all-product-box d-flex">
-        <img
-          :src="
-            require(`../../assets/img/${productArray[counter1].image}-400x510.jpg`)
-          "
-          alt=""
-        />
-        <div class="filter">
-          <h5>select options / quick view</h5>
-        </div>
-        <h3>{{ productArray[counter1].item }}</h3>
-        <p>{{ productArray[counter1].prize }}</p>
-      </div>
-      <div class="all-product-box d-flex">
-        <img
-          :src="
-            require(`../../assets/img/${productArray[counter2].image}-400x510.jpg`)
-          "
-          alt=""
-        />
-        <div class="filter">
-          <h5>select options / quick view</h5>
-        </div>
-        <h3>{{ productArray[counter2].item }}</h3>
-        <p>{{ productArray[counter2].prize }}</p>
-      </div>
-      <div class="all-product-box d-flex">
-        <img
-          :src="
-            require(`../../assets/img/${productArray[counter3].image}-400x510.jpg`)
-          "
-          alt=""
-        />
-        <div class="filter">
-          <h5>select options / quick view</h5>
-        </div>
-        <h3>{{ productArray[counter3].item }}</h3>
-        <p>{{ productArray[counter3].prize }}</p>
         <div @click="next()" class="right-arrow">
           <i class="fas fa-chevron-right"></i>
         </div>
@@ -79,10 +45,20 @@ export default {
   name: "AllProd",
   data() {
     return {
-      counter: 0,
-      counter1: 1,
-      counter2: 2,
-      counter3: 3,
+      counters: [
+        {
+          counter: 0,
+        },
+        {
+          counter: 1,
+        },
+        {
+          counter: 2,
+        },
+        {
+          counter: 3,
+        },
+      ],
     };
   },
   props: {
@@ -95,48 +71,26 @@ export default {
   },
   methods: {
     prev(index) {
-      this.counter == index;
-      this.counter -= 1;
-      if (this.counter < 0) {
-        this.counter = this.productArray.length - 1;
-      }
-      this.counter1 == index;
-      this.counter1 -= 1;
-      if (this.counter1 < 0) {
-        this.counter1 = this.productArray.length - 1;
-      }
-      this.counter2 == index;
-      this.counter2 -= 1;
-      if (this.counter2 < 0) {
-        this.counter2 = this.productArray.length - 1;
-      }
-      this.counter3 == index;
-      this.counter3 -= 1;
-      if (this.counter3 < 0) {
-        this.counter3 = this.productArray.length - 1;
-      }
+      this.counters.forEach((element, countIndex) => {
+        countIndex == index;
+        element.counter == countIndex;
+        element.counter--;
+
+        if (element.counter < 0) {
+          element.counter = this.productArray.length - 1;
+        }
+      });
     },
     next(index) {
-      this.counter == index;
-      this.counter++;
-      if (this.counter > this.productArray.length - 1) {
-        this.counter = 0;
-      }
-      this.counter1 == index;
-      this.counter1++;
-      if (this.counter1 > this.productArray.length - 1) {
-        this.counter1 = 0;
-      }
-      this.counter2 == index;
-      this.counter2++;
-      if (this.counter2 > this.productArray.length - 1) {
-        this.counter2 = 0;
-      }
-      this.counter3 == index;
-      this.counter3++;
-      if (this.counter3 > this.productArray.length - 1) {
-        this.counter3 = 0;
-      }
+      this.counters.forEach((element, countIndex) => {
+        countIndex == index;
+        element.counter == countIndex;
+        element.counter++;
+
+        if (element.counter > this.productArray.length - 1) {
+          element.counter = 0;
+        }
+      });
     },
   },
   created() {},
@@ -170,6 +124,23 @@ export default {
         top: 0;
         left: 0;
         z-index: 2;
+      }
+      &:nth-of-type(3),
+      &:nth-of-type(4) {
+        .left-arrow,
+        .right-arrow {
+          display: none;
+        }
+      }
+      &:nth-of-type(2) {
+        .right-arrow {
+          display: none;
+        }
+      }
+      &:nth-of-type(5) {
+        .left-arrow {
+          display: none;
+        }
       }
       &:hover .filter {
         display: flex;
