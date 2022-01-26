@@ -5,13 +5,9 @@
     </div>
     <div class="footer-menu">
       <ul>
-        <li><a href="">shop</a></li>
-        <li><a href="">about</a></li>
-        <li><a href="">gallery</a></li>
-        <li><a href="">locations</a></li>
-        <li><a href="">journal</a></li>
-        <li><a href="">contact</a></li>
-        <li><a href="">orders</a></li>
+        <li v-for="(link, index) in menuLink" :key="index">
+          <a href="#">{{ link.link }}</a>
+        </li>
         <li>
           <a href=""><i class="fas fa-shopping-cart"></i><span>0</span></a>
         </li>
@@ -29,6 +25,33 @@
 <script>
 export default {
   name: "FooterLeft",
+  data() {
+    return {
+      menuLink: [
+        {
+          link: "shop",
+        },
+        {
+          link: "about",
+        },
+        {
+          link: "gallery",
+        },
+        {
+          link: "locations",
+        },
+        {
+          link: "journal",
+        },
+        {
+          link: "contact",
+        },
+        {
+          link: "orders",
+        },
+      ],
+    };
+  },
 };
 </script>
 
