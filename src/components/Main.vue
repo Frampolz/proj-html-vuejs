@@ -59,6 +59,36 @@ export default {
           category: "cakes, pastries",
           prize: "$30.00- $62.00",
         },
+        {
+          item: "blackberry stuffed bread",
+          image: "blackberry-stuffed-bread",
+          category: "breads, cakes, pastries",
+          prize: "$10.00- $32.00",
+        },
+        {
+          item: "glazed pancake with lemon",
+          image: "glazed-pancake-with-lemon",
+          category: "pancake, cakes, pastries",
+          prize: "$11.00- $33.00",
+        },
+        {
+          item: "home bread",
+          image: "home-bread",
+          category: "breads, pastries",
+          prize: "$13.00- $28.00",
+        },
+        {
+          item: "premium bread",
+          image: "premium-bread",
+          category: "breads",
+          prize: "$8.00- $20.00",
+        },
+        {
+          item: "small cupcake",
+          image: "small-cupcake",
+          category: "cupcake, cakes, pastries",
+          prize: "$12.50- $22.50",
+        },
       ],
     };
   },
