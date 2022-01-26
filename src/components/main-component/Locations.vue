@@ -5,7 +5,7 @@
       <h2>visit our bakeries</h2>
     </div>
     <div class="locations-box-container d-flex">
-      <div class="location-box-left">
+      <!--       <div class="location-box-left">
         <img src="../../assets/img/new-york-bk.jpg" alt="" />
         <div class="location">
           <h2>new york</h2>
@@ -46,6 +46,36 @@
             </div>
           </div>
         </div>
+      </div> -->
+
+      <div
+        v-for="(location, index) in locations"
+        :key="index"
+        :style="`background-color: ${location.color}`"
+        class="location-box"
+      >
+        <img
+          :src="require(`../../assets/img/${location.image}-bk.jpg`)"
+          alt=""
+        />
+        <div class="location">
+          <h2>{{ location.city }}</h2>
+          <div class="location-details d-flex">
+            <div class="phone">
+              <h5>{{ location.phone }}</h5>
+              <p>{{ location.number }}</p>
+            </div>
+            <div class="business-hour">
+              <h5>{{ location.opening }}</h5>
+              <p>{{ location.hours }}</p>
+            </div>
+            <div class="maps">
+              <div class="button m-0">
+                <a class="btn white" href="">{{ location.maps }}</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -54,6 +84,32 @@
 <script>
 export default {
   name: "Locations",
+  data() {
+    return {
+      locations: [
+        {
+          city: "new york",
+          image: "new-york",
+          phone: "call us",
+          number: "1.800.458.556",
+          opening: "open all week",
+          hours: "9:00 AM - 6:00 PM",
+          maps: "View map",
+          color: "rgba(8, 104, 117,0.1)",
+        },
+        {
+          city: "london",
+          image: "london",
+          phone: "call us",
+          number: "1.800.458.556",
+          opening: "open all week",
+          hours: "9:00 AM - 6:00 PM",
+          maps: "View map",
+          color: "rgba(240, 202, 161, 0.3)",
+        },
+      ],
+    };
+  },
 };
 </script>
 
@@ -66,14 +122,7 @@ export default {
     text-align: center;
   }
   .locations-box-container {
-    .location-box-left {
-      background-color: $atoll;
-    }
-    .location-box-right {
-      background-color: $chalky;
-    }
-    .location-box-left,
-    .location-box-right {
+    .location-box {
       width: 50%;
       img {
         width: 100%;
