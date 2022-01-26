@@ -139,9 +139,7 @@ export default {
       }
     },
   },
-  created() {
-    console.log(this.productArray);
-  },
+  created() {},
 };
 </script>
 
