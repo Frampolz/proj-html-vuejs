@@ -42,6 +42,15 @@
 <script>
 export default {
   name: "Service",
+  data() {
+    return {
+      serviceData: [
+        {
+          image: ''
+        },
+      ]
+    }
+  }
 };
 </script>
 
@@ -96,6 +105,9 @@ export default {
         .button {
           display: flex;
           justify-content: center;
+          a {
+            color: white;
+          }
         }
       }
     }
