@@ -17,14 +17,14 @@
         <i class="fas fa-chevron-left"></i>
       </div>
       <img
-        :src="require(`../../assets/img/${products[counter].image}.jpg`)"
+        :src="require(`../../assets/img/${productArray[counter].image}.jpg`)"
         alt=""
       />
       <div class="filter">
         <div class="prod-details">
-          <h3>{{ products[counter].item }}</h3>
-          <h6>{{ products[counter].category }}</h6>
-          <h3>{{ products[counter].prize }}</h3>
+          <h3>{{ productArray[counter].item }}</h3>
+          <h6>{{ productArray[counter].category }}</h6>
+          <h3>{{ productArray[counter].prize }}</h3>
         </div>
       </div>
     </div>
@@ -34,14 +34,14 @@
         <i class="fas fa-chevron-right"></i>
       </div>
       <img
-        :src="require(`../../assets/img/${products[counter1].image}.jpg`)"
+        :src="require(`../../assets/img/${productArray[counter1].image}.jpg`)"
         alt=""
       />
       <div class="filter">
         <div class="prod-details">
-          <h3>{{ products[counter1].item }}</h3>
-          <h6>{{ products[counter1].category }}</h6>
-          <h3>{{ products[counter1].prize }}</h3>
+          <h3>{{ productArray[counter1].item }}</h3>
+          <h6>{{ productArray[counter1].category }}</h6>
+          <h3>{{ productArray[counter1].prize }}</h3>
         </div>
       </div>
     </div>
@@ -55,68 +55,38 @@ export default {
     return {
       counter: 0,
       counter1: 1,
-      products: [
-        {
-          item: "choco chip cookies",
-          image: "choco-chip-cookies",
-          category: "coockies, pastries",
-          prize: "$19.00 $39.00",
-        },
-        {
-          item: "strawberry jam cookies",
-          image: "strawberry-jam-cookies",
-          category: "coockies, pastries",
-          prize: "$24.00- $62.00",
-        },
-        {
-          item: "strawberry donut",
-          image: "strawberry-donut",
-          category: "donuts, pastries",
-          prize: "$24.00- $42.00",
-        },
-        {
-          item: "perfect macarons",
-          image: "perfect-macarons",
-          category: "macarons, pastries",
-          prize: "$18.00- $52.00",
-        },
-        {
-          item: "cookies with ice cream",
-          image: "cookies-with-ice-cream",
-          category: "cookies, pastries",
-          prize: "$20.00- $48.00",
-        },
-        {
-          item: "cherry cake",
-          image: "cherry-cake",
-          category: "cakes, pastries",
-          prize: "$30.00- $62.00",
-        },
-      ],
     };
+  },
+  props: {
+    productArray: {
+      type: Array,
+      default() {
+        return [];
+      },
+    },
   },
   methods: {
     prev(index) {
       this.counter1 == index;
       this.counter1 -= 1;
       if (this.counter1 < 0) {
-        this.counter1 = this.products.length - 1;
+        this.counter1 = this.productArray.length - 1;
       }
       this.counter == index;
       this.counter -= 1;
       if (this.counter < 0) {
-        this.counter = this.products.length - 1;
+        this.counter = this.productArray.length - 1;
       }
     },
     next(index) {
       this.counter1 == index;
       this.counter1++;
-      if (this.counter1 > this.products.length - 1) {
+      if (this.counter1 > this.productArray.length - 1) {
         this.counter1 = 0;
       }
       this.counter == index;
       this.counter++;
-      if (this.counter > this.products.length - 1) {
+      if (this.counter > this.productArray.length - 1) {
         this.counter = 0;
       }
     },
