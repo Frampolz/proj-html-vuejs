@@ -12,31 +12,61 @@
         </div>
       </div>
       <div class="all-product-box d-flex">
-        <img src="../../assets/img/choco-chip-cookies-400x510.jpg" alt="" />
+        <img
+          :src="
+            require(`../../assets/img/${productArray[counter].image}-400x510.jpg`)
+          "
+          alt=""
+        />
+
         <div class="filter">
           <h5>select options / quick view</h5>
         </div>
-        <h3>choco chip cookies</h3>
-        <p>$19.00- $39.00</p>
-        <div class="left-arrow">
+        <h3>{{ productArray[counter].item }}</h3>
+        <p>{{ productArray[counter].prize }}</p>
+        <div @click="prev()" class="left-arrow">
           <i class="fas fa-chevron-left"></i>
         </div>
       </div>
       <div class="all-product-box d-flex">
-        <img src="../../assets/img/strawberry-jam-cookies-400x510.jpg" alt="" />
-        <h3>strawberry jam cookies</h3>
-        <p>$24.00- $62.00</p>
+        <img
+          :src="
+            require(`../../assets/img/${productArray[counter1].image}-400x510.jpg`)
+          "
+          alt=""
+        />
+        <div class="filter">
+          <h5>select options / quick view</h5>
+        </div>
+        <h3>{{ productArray[counter1].item }}</h3>
+        <p>{{ productArray[counter1].prize }}</p>
       </div>
       <div class="all-product-box d-flex">
-        <img src="../../assets/img/strawberry-donut-400x510.jpg" alt="" />
-        <h3>strawberry donut</h3>
-        <p>$24.00- $42.00</p>
+        <img
+          :src="
+            require(`../../assets/img/${productArray[counter2].image}-400x510.jpg`)
+          "
+          alt=""
+        />
+        <div class="filter">
+          <h5>select options / quick view</h5>
+        </div>
+        <h3>{{ productArray[counter2].item }}</h3>
+        <p>{{ productArray[counter2].prize }}</p>
       </div>
       <div class="all-product-box d-flex">
-        <img src="../../assets/img/perfect-macarons-400x510.jpg" alt="" />
-        <h3>perfect macarons</h3>
-        <p>$18.00- $52.00</p>
-        <div class="right-arrow">
+        <img
+          :src="
+            require(`../../assets/img/${productArray[counter3].image}-400x510.jpg`)
+          "
+          alt=""
+        />
+        <div class="filter">
+          <h5>select options / quick view</h5>
+        </div>
+        <h3>{{ productArray[counter3].item }}</h3>
+        <p>{{ productArray[counter3].prize }}</p>
+        <div @click="next()" class="right-arrow">
           <i class="fas fa-chevron-right"></i>
         </div>
       </div>
@@ -47,6 +77,71 @@
 <script>
 export default {
   name: "AllProd",
+  data() {
+    return {
+      counter: 0,
+      counter1: 1,
+      counter2: 2,
+      counter3: 3,
+    };
+  },
+  props: {
+    productArray: {
+      type: Array,
+      default() {
+        return [];
+      },
+    },
+  },
+  methods: {
+    prev(index) {
+      this.counter == index;
+      this.counter -= 1;
+      if (this.counter < 0) {
+        this.counter = this.productArray.length - 1;
+      }
+      this.counter1 == index;
+      this.counter1 -= 1;
+      if (this.counter1 < 0) {
+        this.counter1 = this.productArray.length - 1;
+      }
+      this.counter2 == index;
+      this.counter2 -= 1;
+      if (this.counter2 < 0) {
+        this.counter2 = this.productArray.length - 1;
+      }
+      this.counter3 == index;
+      this.counter3 -= 1;
+      if (this.counter3 < 0) {
+        this.counter3 = this.productArray.length - 1;
+      }
+    },
+    next(index) {
+      this.counter == index;
+      this.counter++;
+      if (this.counter > this.productArray.length - 1) {
+        this.counter = 0;
+      }
+      this.counter1 == index;
+      this.counter1++;
+      if (this.counter1 > this.productArray.length - 1) {
+        this.counter1 = 0;
+      }
+      this.counter2 == index;
+      this.counter2++;
+      if (this.counter2 > this.productArray.length - 1) {
+        this.counter2 = 0;
+      }
+      this.counter3 == index;
+      this.counter3++;
+      if (this.counter3 > this.productArray.length - 1) {
+        this.counter3 = 0;
+      }
+    },
+  },
+  created() {
+    console.log(this.productArray);
+  },
 };
 </script>
 
