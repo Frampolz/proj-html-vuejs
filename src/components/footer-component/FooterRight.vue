@@ -10,10 +10,9 @@
       </div>
     </div>
     <div class="social-link">
-      <a href=""><i class="fab fa-instagram"></i></a>
-      <a href=""><i class="fab fa-twitter"></i></a>
-      <a href=""><i class="fab fa-facebook-f"></i></a>
-      <a href=""><i class="fab fa-pinterest-p"></i></a>
+      <a v-for="(social, index) in socialLink" :key="index" href="#"
+        ><i :class="social.link"></i
+      ></a>
     </div>
   </div>
 </template>
@@ -21,6 +20,24 @@
 <script>
 export default {
   name: "FooterRight",
+  data() {
+    return {
+      socialLink: [
+        {
+          link: "fab fa-instagram",
+        },
+        {
+          link: "fab fa-twitter",
+        },
+        {
+          link: "fab fa-facebook-f",
+        },
+        {
+          link: "fab fa-pinterest-p",
+        },
+      ],
+    };
+  },
 };
 </script>
 
