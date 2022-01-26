@@ -60,7 +60,7 @@ export default {
 .footer-menu {
   ul {
     li {
-      margin: 2em 3.5em 8em 0;
+      margin: 2em 3em 8em 0;
       a {
         text-transform: capitalize;
         font-size: 1.2em;
